@@ -8,7 +8,10 @@ class ProjectSerializer(serializers.ModelSerializer):
         if len(value)<3:
             raise serializers.ValidationError('Project name must be at least 3 characters long!')
         return value
+
+
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = ['id', 'title','status','project','created_at']
+
