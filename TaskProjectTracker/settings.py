@@ -78,19 +78,14 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Load the hidden .env file
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-# Replace your hardcoded strings with os.getenv
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-# DEBUG should be False in production, so we parse the string 'True'
 DEBUG = os.getenv('DEBUG') == 'True'
 
-# ... further down the file ...
 CELERY_BROKER_URL = os.getenv('REDIS_URL')
 
 WSGI_APPLICATION = 'TaskProjectTracker.wsgi.application'
