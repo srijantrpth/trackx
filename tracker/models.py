@@ -7,6 +7,7 @@ class Project(models.Model):
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.name
 
